@@ -1,0 +1,2 @@
+# MyFinishPDFViewPagerV27
+MyFinishPDFViewPagerV27版本，同时加入自定义控制是否可以双击放大等
