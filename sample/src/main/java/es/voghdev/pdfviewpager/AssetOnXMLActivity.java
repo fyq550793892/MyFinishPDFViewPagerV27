@@ -15,8 +15,10 @@
  */
 package es.voghdev.pdfviewpager;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +29,10 @@ import es.voghdev.pdfviewpager.library.PDFViewPager;
 import es.voghdev.pdfviewpager.library.adapter.BasePDFPagerAdapter;
 
 public class AssetOnXMLActivity extends BaseSampleActivity {
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE};
+    private static int REQUEST_PERMISSION_CODE = 1;//请求状态码
     RemotePDFLayout remotePDFLayout;
     Button btChange;
     Button btChangeBig;
@@ -36,6 +42,9 @@ public class AssetOnXMLActivity extends BaseSampleActivity {
         super.onCreate(savedInstanceState);
         setTitle(R.string.asset_on_xml);
         setContentView(R.layout.activity_asset_on_xml);
+
+        ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, REQUEST_PERMISSION_CODE);
+
         btChange = findViewById(R.id.btChange);
         btChangeBig = findViewById(R.id.btChangeBig);
         //pdfViewPager = findViewById(R.id.pdfViewPager);

@@ -142,6 +142,7 @@ public class SDCardPDFLayout extends FrameLayout {
                 if (pdfViewPager != null && adapter != null) {
                     showPageTv.setText(pdfViewPager.getCurrentItem() + 1 + "/" + adapter.getCount());
                 }
+                Log.e("cjpcjp",pdfViewPager.getWidth()+"__"+pdfViewPager.getHeight());
             }
 
             @Override
